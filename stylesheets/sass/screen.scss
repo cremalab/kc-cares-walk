@@ -1,0 +1,155 @@
+//MQ's
+$MQs: true;
+
+//COLORS
+$c: #0C5DA6;
+$lc: #1188F6;
+$dc: #094780;
+$grey: #dfdfdf;
+
+// SASS
+@import 'jkr/jkr';
+
+//FONTS
+@mixin display {
+	font-family: "brandon-grotesque",sans-serif;
+	font-weight: 100;
+}
+@mixin paragraph {
+	font-family: "brandon-grotesque",sans-serif;
+	font-weight: 300;
+}
+
+html { font-size: 62.5%; }
+body { background: black url('../images/finishline3.jpg') center top no-repeat; color: #272727; @include paragraph; font-size: 14px; font-size: 1.4rem; -webkit-backface-visibility: hidden; }
+
+// Type
+h1, h2, h3, h4 { @include display; margin: 0; color: #5b5b5b; }
+h2, h3 { font-weight: 300; text-transform: uppercase; }
+h1, h1 a { font-weight: 500; @include font-size(32); text-decoration: none; }
+h2, h2 a { line-height: 35px; font-weight: 100; @include font-size(28); text-decoration: none; }
+h3, h3 a { @include font-size(18); text-decoration: none; text-transform: uppercase; }
+h4, h4 a { font-weight: 700; text-transform: uppercase; }
+
+p { color: #272727; @include font-size(18); font-weight: 300; line-height: 1.6em; margin: 5px 0; }
+
+p.help { color: #bbb; }
+
+a { color: $c;
+	&:hover { text-decoration: none; }
+	&:focus { outline: 0; }
+}
+
+
+input { outline: 0; }
+
+// Utility
+.clear { clear: both; }
+.left { float: left; }
+.right { float: right; }
+hr { clear: both; width: 100%; height: 1px; background: #bbb; border: 0; }
+img { width:100%; }
+
+// Forms 
+.form {
+	label { display: block; @include font-size(10); color: #272727; padding: 10px 0 5px; z-index: 999; text-transform: uppercase; font-weight: 700; }
+	.field-group { width: 100%; margin: 0 0 10px; clear: left;
+		.up { opacity: 1; }
+		input { width: 100%; @include font-size(18); padding: 10px; background: white; border: 1px solid $grey; border-radius: 5px; outline: 0; z-index: 998; }
+		.forgot-password { @include font-size(12); }
+	}
+	.check-group { margin: 20px 0;
+		input, p, a { display: inline-block; @include font-size(18); color: $c; }
+		ul {
+			li { float: left; padding: 5px; margin-right: 5px;}
+		}
+	}
+	.actions { width: 100%; margin: 20px 0; clear: both;
+		input, .ui-btn-text { border: 1px solid $c; @include font-size(16); background: none; padding: 5px 15px; color: $c; font-weight: 500; border-radius: 5px; text-align: center; 
+			&:hover { background: $c; color: white; }
+			&:focus { background: $dc; }
+		}
+		.disabled { border-color: #ccc !important; color: #ccc; 
+			&:hover { border-color: #ccc !important; color: #ccc; }
+		}
+	}
+}
+
+.btn  { @include btn($c); outline: 0; }
+
+.hide { display: none; }
+
+//GRID
+section { padding: 40px 20px 60px; }
+.row { width: 100%; }
+.row-light { background: #eee; }
+.row-dark {
+	h1, h2, h3, h4, p, a { color: white; }
+}
+
+.w { max-width: 960px; margin: 0 auto; }
+
+.half { width: 48%; float: left; margin-right: 2%; }
+.three-fourth { width: 66%; float: left; margin-right: 4%; }
+.one-fourth { width: 26%; float: left; margin-right: 4%; }
+
+@include bp(s) {
+	.half, .three-fourth, .one-fourth { width: 100%; padding: 2%; float: none; margin-right: 0; margin-bottom: 30px; }
+}
+
+// HEADER
+header { position: fixed; width: 100%; background: white; z-index: 9999; padding: 10px; border-bottom: 1px solid #f2f2f2;
+
+	.logo { width: 250px; float: left; }
+	p { float: left; line-height: 40px; text-transform: uppercase; font-weight: 100; margin-left: 30px; padding: 0 0 0 20px; border-left: 1px solid #dfdfdf; }
+		@include bp(s) {
+			p { display: none; }
+		}
+	a { text-decoration: none; }
+	ul { float: right;
+		li { display: inline; float: left; margin: 10px;
+			a { display: block; padding: 10px; color: $c; border: 1px solid $c; border-radius: 4px;
+				&:hover { border-color: $dc; }
+			}
+		}
+	}
+}
+
+// INTRO
+.intro {
+	div { width: 50%; margin: 0 auto; text-align: center; padding: 160px 0 80px;
+		h1 { color: white; text-transform: uppercase; font-weight: 700; }
+		h2 { color: white; @include font-size(35); 
+			span { font-size: 50%; } 
+			a { @include font-size(14); padding:0 5px; color: white; border-radius: 4px; padding: 1px 4px 0; 
+				&:hover { color: $lc; }
+			}
+		
+		}
+		p { color: white; }
+	}
+}
+
+.walk-info { margin: 0; padding: 0 2%; border-left: 1px solid #dadada; 
+	p { @include font-size(16); }
+}
+
+
+.sponsors { text-align: center; background: white; h2 { text-align: left; } }
+.sponsor-levels { margin: 40px 0;
+	li { display: inline; width: 16.6666%; float: left; text-align: center; font-weight: 500; 
+		span { display: block; padding-top: 5px; font-size: 150%; font-weight: 100; }
+	}
+	@include bp(s) {
+		li { display: block; width: 100%; float: none; margin-bottom: 30px; }
+	}
+}
+
+.mission { 
+	background: black url('../images/childrensmercy.jpg') center center no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; 
+}
+
+footer { width: 100%; background: #272727; color: white; padding: 20px; text-align: center;
+	a { color: white; text-decoration: none; vertical-align: top; line-height: 35px; }
+	img { width: 100px; }
+}

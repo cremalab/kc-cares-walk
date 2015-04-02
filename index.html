@@ -23,6 +23,41 @@
           <script type="text/javascript" src="/js/libs/selectivizr-1.0.2.min.js"></script>
         <![endif]-->
     
+        <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.2/zepto.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/luminateExtend/1.6.0/luminateExtend.min.js"></script>
+        <script>
+$(function() {
+  luminateExtend.init({
+    apiKey: 'CMHkey13', 
+    path: {
+      nonsecure: 'http://secure2.convio.net/tcmh/site/',
+      secure: 'https://secure2.convio.net/tcmh/site/'
+    }
+  });
+
+  var myLoginTestCallback = function(data) {
+    console.log('here');
+    console.log(data);
+  };
+
+  setTimeout(function() {
+    luminateExtend.api.request({
+      api: 'cons', 
+      callback: {
+        success: myLoginTestCallback,
+        error: myLoginTestCallback
+      },
+      data: 'method=add_members&add_group_ids=50003&first_name=test&last_name=test&primary_email=test@test.com',
+      requestType: 'POST',
+      useHTTPS: true
+    });
+
+  }, 1000);
+
+});
+
+        </script>
+
     </head>
     <body>
         <header>

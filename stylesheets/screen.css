@@ -590,6 +590,24 @@ html {
 .i-chat-2:before {
   content: "c"; }
 
+.i-check:before {
+  content: "d"; }
+
+.i-check-1:before {
+  content: "e"; }
+
+.i-facebook-circle:before {
+  content: "f"; }
+
+.i-twitter-circle:before {
+  content: "g"; }
+
+.i-instagram-circle:before {
+  content: "h"; }
+
+.i-at:before {
+  content: "i"; }
+
 html {
   font-size: 62.5%; }
 
@@ -674,6 +692,25 @@ hr {
 
 img {
   width: 100%; }
+
+table {
+  margin: 40px 0; }
+
+tr {
+  border-bottom: 1px solid #f6f6f6; }
+  tr:first-child {
+    border: 0; }
+    tr:first-child th {
+      font-weight: 100;
+      font-size: 18px;
+      font-size: 1.8rem; }
+  tr th {
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center; }
+  tr td {
+    padding: 10px; }
 
 .form label {
   display: block;
@@ -810,12 +847,16 @@ header {
     float: left; }
   header p {
     float: left;
-    line-height: 40px;
+    line-height: 20px;
     text-transform: uppercase;
     font-weight: 100;
     margin-left: 30px;
     padding: 0 0 0 20px;
     border-left: 1px solid #dfdfdf; }
+    header p span {
+      display: block;
+      font-size: 60%;
+      font-weight: 700; }
   @media (max-width: 600px) {
     header p {
       display: none; } }

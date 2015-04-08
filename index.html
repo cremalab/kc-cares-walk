@@ -22,6 +22,9 @@
         <!--[if (gte IE 6)&(lte IE 8)]>
           <script type="text/javascript" src="/js/libs/selectivizr-1.0.2.min.js"></script>
         <![endif]-->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.2/zepto.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/luminateExtend/1.6.0/luminateExtend.min.js"></script>
     
     </head>
     <body>
@@ -29,7 +32,7 @@
             <div class="logo">
                 <img src="images/kccares_logo.jpg" alt="KC Cares" />
             </div><!-- /logo -->
-            <p>Saturday August 29th</p>
+            <p>Saturday August 29th<span>Benefiting Children's Mercy Cancer Center Auxiliary</span></p>
             <ul>
                 <li><a href="#pre-register">Sign ups coming soon</a></li>
             </ul>
@@ -48,18 +51,20 @@
 		<div class="three-fourth">
 			<p>Provide us your email and contribution level and we'll send you an email when registration is open to the public. Thanks for your interest in KCares for Kids Walk!</p>
 			<br>
-			<form action="" class="form">
+			<form action="" id="pre-register-form" class="form">
+				<input type="hidden" name="add_group_ids" value="50003" />
++        		<input type="hidden" name="method" value="create" />
 				<div class="row clearfix">
 					<div class="half">
 						<div class="field-group">
 							<label>First Name</label>
-							<input type="text" placeholder="John">
+							<input type="text" placeholder="John" name="first_name" required>
 						</div><!-- /field -->
 					</div><!-- /half -->
 					<div class="half">
 						<div class="field-group">
 							<label>Last Name</label>
-							<input type="text" placeholder="Smith">
+							<input type="text" placeholder="Smith" name="last_name" required>
 						</div><!-- /field -->
 					</div><!-- /half -->
 				</div><!-- /row -->
@@ -72,7 +77,7 @@
 				</div><!-- control -->
 				<div class="field-group">
 					<label>Email Address</label>
-					<input type="text" placeholder="you@awesome.com">
+					<input type="email" placeholder="you@awesome.com" name="primary_email" required>
 				</div><!-- /field -->
 				<div class="actions">
 					<input type="submit" class="disabled" value="Pre Register">
@@ -81,13 +86,14 @@
 		</div><!-- /3/4 -->
 		<div class="one-fourth walk-info">
 			<h4>Location</h4>
-			<p>Sporting Park, One Sporting Way, Kansas City, KS 66111</p>
+			<p><b>Sporting Park</b>
+				<br>One Sporting Way<br>Kansas City, KS 66111</p>
 			<br>
 			<h4>Times</h4>
 			<p>8:30 a.m.: Event  registration and pre-event activities; 10:30 a.m.: opening ceremony and walk</p>
 			<br>
 			<h4>Parking Info</h4>
-			<p>More info to come closer to walk date </p>
+			<p>More info to come closer<br>to walk date </p>
 			<br>
 			<h4>Cost</h4>
 			<p>$10 for all individuals, 5 years old and under are free  </p>
@@ -98,17 +104,81 @@
 	<div class="w">
 		<h2>Sponsorship Levels</h2>
 		<table>
-			<th>
+			<tr>
+				<th></th>
+				<th>Hero</th>
+				<th>Champion</th>
+				<th>Hope</th>
+				<th>Brave</th>
+				<th>Advocate</th>
+			</tr>
+			<tr>
+				<th>Benefit</th>
+				<th>$10,000</th>
+				<th>$5,000</th>
+				<th>$2,500</th>
+				<th>$1,000</th>
+				<th>$500</th>
+			</tr>
+			<tr>
+				<td><p>Company logo and sponsor level on walk website and Facebook page</p></td>
+				<td><span class="i-check"> <br>includes link to sponsor website</span></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"> <br>walk website only</span></td>
+				<td><span class="i-check"> <br>walk website only</span></td>
+			</tr>
+			<tr>
+				<td><p>Introduction and recognition during event ceremony </p></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+			</tr>
+			<tr>
+				<td><p>Individual walk registrations </p></td>
+				<td>20</td>
+				<td>10</td>
+				<td>5</td>
+				<td>2</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td><p>Sponsor banner displayed at 2015 KCares for Kids Walk </p></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><p>Table at 2015 KCares for Kids Walk to distribute materials </p></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><p>Guided tour of Children's Mercy (restrictions apply)</p></td>
+				<td><span class="i-check"></span></td>
+				<td><span class="i-check"></span></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><p>Logo on post-event communications</p></td>
+				<td><span class="i-check"></span></td>
 				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
-				<td></td>
-				<td></td>
-			</th>
+			</tr>
 		</table>
 		<br>
-		<a class="btn btn-primary" href="#">Become a sponsor</a>
+		<!-- <a class="btn btn-primary" href="mailto:">Become a sponsor</a> -->
 	</div><!-- /wrap -->
 </section>    <section class="row row-dark mission">
 	<div class="w clearfix">
@@ -133,13 +203,18 @@
 	</div><!-- /wrap -->
 </section>
         <footer>
-            <a href="http://cremalab.com">Experience by <img src="images/cremalab_logo_h.svg" alt="Cremalab"></a>
+            <!--<ul class="social">
+                <li><a class="i-facebook-circle" href="#"></a></li>
+                <li><a class="i-twitter-circle" href="#"></a></li>
+            </ul> /social -->
+            <a class="wedidit" href="http://cremalab.com">Experience by <img src="images/cremalab_logo_h.svg" alt="Cremalab"></a>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/libs/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/common.js"></script>
+        <script src="js/register.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
         <script>

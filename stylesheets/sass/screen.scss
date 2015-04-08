@@ -50,6 +50,15 @@ input { outline: 0; }
 hr { clear: both; width: 100%; height: 1px; background: #bbb; border: 0; }
 img { width:100%; }
 
+table { margin: 40px 0; }
+tr { border-bottom: 1px solid #f6f6f6;
+	&:first-child { border: 0; 
+		th { font-weight: 100; @include font-size(18); }
+	}
+	th { padding: 10px; text-transform: uppercase; font-weight: 700; text-align: center; } 
+	td { padding: 10px; }
+}
+
 // Forms 
 .form {
 	label { display: block; @include font-size(10); color: #272727; padding: 10px 0 5px; z-index: 999; text-transform: uppercase; font-weight: 700; }
@@ -101,7 +110,9 @@ section { padding: 40px 20px 60px; }
 header { position: fixed; width: 100%; background: white; z-index: 9999; padding: 10px; border-bottom: 1px solid #f2f2f2;
 
 	.logo { width: 250px; float: left; }
-	p { float: left; line-height: 40px; text-transform: uppercase; font-weight: 100; margin-left: 30px; padding: 0 0 0 20px; border-left: 1px solid #dfdfdf; }
+	p { float: left; line-height: 20px; text-transform: uppercase; font-weight: 100; margin-left: 30px; padding: 0 0 0 20px; border-left: 1px solid #dfdfdf; 
+		span { display: block; font-size: 60%; font-weight: 700; }
+	}
 		@include bp(s) {
 			p { display: none; }
 		}

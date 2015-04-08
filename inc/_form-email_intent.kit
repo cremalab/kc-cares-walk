@@ -5,18 +5,20 @@
 		<div class="three-fourth">
 			<p>Provide us your email and contribution level and we'll send you an email when registration is open to the public. Thanks for your interest in KCares for Kids Walk!</p>
 			<br>
-			<form action="" class="form">
+			<form action="" id="pre-register-form" class="form">
+				<input type="hidden" name="add_group_ids" value="50003" />
++        		<input type="hidden" name="method" value="create" />
 				<div class="row clearfix">
 					<div class="half">
 						<div class="field-group">
 							<label>First Name</label>
-							<input type="text" placeholder="John">
+							<input type="text" placeholder="John" name="first_name" required>
 						</div><!-- /field -->
 					</div><!-- /half -->
 					<div class="half">
 						<div class="field-group">
 							<label>Last Name</label>
-							<input type="text" placeholder="Smith">
+							<input type="text" placeholder="Smith" name="last_name" required>
 						</div><!-- /field -->
 					</div><!-- /half -->
 				</div><!-- /row -->
@@ -29,7 +31,7 @@
 				</div><!-- control -->
 				<div class="field-group">
 					<label>Email Address</label>
-					<input type="text" placeholder="you@awesome.com">
+					<input type="email" placeholder="you@awesome.com" name="primary_email" required>
 				</div><!-- /field -->
 				<div class="actions">
 					<input type="submit" class="disabled" value="Pre Register">
@@ -38,13 +40,14 @@
 		</div><!-- /3/4 -->
 		<div class="one-fourth walk-info">
 			<h4>Location</h4>
-			<p>Sporting Park, One Sporting Way, Kansas City, KS 66111</p>
+			<p><b>Sporting Park</b>
+				<br>One Sporting Way<br>Kansas City, KS 66111</p>
 			<br>
 			<h4>Times</h4>
 			<p>8:30 a.m.: Event  registration and pre-event activities; 10:30 a.m.: opening ceremony and walk</p>
 			<br>
 			<h4>Parking Info</h4>
-			<p>More info to come closer to walk date </p>
+			<p>More info to come closer<br>to walk date </p>
 			<br>
 			<h4>Cost</h4>
 			<p>$10 for all individuals, 5 years old and under are free  </p>
